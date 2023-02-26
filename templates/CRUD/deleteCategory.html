@@ -1,0 +1,15 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block content %}
+    <div class="shadow-sm mb-1 mb-3 mt-4 bg-white rounded">
+            <h3>ลบหมวดหมู่</h3>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <br>
+            <button type="submit" class="btn btn-danger">ลบ</button> &nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-secondary" onclick="history.back()">กลับ</button>
+        </form>
+
+    </div>
+{% endblock %}

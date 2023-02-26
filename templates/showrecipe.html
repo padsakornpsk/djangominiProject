@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+           <h3><a href="{% url 'home' %}">หน้าแรก</a> > สูตรอาหาร</h3>
+    <table class="table table-light">
+        <tr>
+            {% for content in contents %}
+                {% if content.cat_id.cat_name == "สูตรอาหาร" %}
+                    <td><img src="{{ content.cont_image.url }}" width="200px" height="18px"
+                             class="img img-thumbnail"></td>
+                    <td class="text-primary"><b> อาหาร : {{ content.cont_name }} </b> <br>
+                        <b>หมวดหมู่ : {{ content.cat_id.cat_name }} </b><br>
+                    <form method="POST">
+                    {% csrf_token %}
+                            <input id="id"  name="id" type="hidden" value="{{ content.cont_id }}">
+                            <input type="submit" class="btn btn-success" value="อ่านเพิ่มเติม">
+
+                </form>
+                    </td>
+                    <td class="bg-white"><br></td>
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                        </tr>
+                        <tr>
+                            <td class="bg-white"><br></td>
+                        </tr>
+                        <tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </tr>
+    </table>
+{% endblock %}

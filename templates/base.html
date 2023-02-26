@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<head>
+<title>Wong</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/bootstrap523/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/fontawesome621/css/all.css' %}">
+    <script src="{% static 'stylesheets/bootstrap523/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+    <style type="text/css">
+        body{
+           font-family: 'Noto Sans Thai', sans-serif;
+        }
+    </style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary border border-light"  >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="" href="{% url 'home' %}">
+            <img class="" src="{% static 'images/logo.png' %}" alt="logo" width="250" height="150" class="d-inline-block align-text-top">
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+  <div class="container-fluid " style="background-color: #edf0f2">
+  {% include 'imageSlide.html' %}
+  {% include 'userMenu.html' %}
+  <div class="container mb-4 " style="background-color: #edf0f2">
+        <div class="shadow-sm p-3 mb-1 mt-4 bg-white rounded">
+            {% block content %}
+            {% endblock %}
+        </div>
+  </div>
+
+  {% include 'footer.html' %}
+</div>
+
+</body>
+</html>

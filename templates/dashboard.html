@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/bootstrap523/css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/fontawesome621/css/all.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+<script src="{% static 'stylesheets/bootstrap523/js/bootstrap.js' %}"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200;300&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+
+font-family: 'Roboto Slab', serif;
+    }
+  .fthai{
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+  }
+  .responsive {
+  max-width: 200px;
+  height: auto;
+      align-content: center;
+      text-align: center;
+       display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+</style>
+<body>
+
+{% block sidebar %}
+<nav class="navbar navbar-dark " style="background-color: #7286D3" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" alt="logo" width="30" height="24" class="d-inline-block align-text-top">
+      Share Happiness Dashboard
+    </a>
+  </div>
+</nav>
+{% endblock %}
+<div class="row " style="height: 90%; width: 100% ">
+<div class="col-lg-3 " style="background-color: #8EA7E9; ">
+{% include 'menu.html' %}
+</div>
+<div class="col-lg-9" style="background-color: #E5E0FF" >
+<br>
+{% block content %}
+
+{% endblock %}
+</div>
+</div>
+</div>
+</body>
+</html>

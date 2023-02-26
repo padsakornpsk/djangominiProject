@@ -1,0 +1,16 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block content %}
+    <div class="shadow-sm mb-1 mb-3 mt-4 bg-white rounded">
+        <h3>เพิ่มหมวดหมู่</h3>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <br>
+            <button type="submit" class="btn btn-success">เพิ่ม</button> &nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-secondary">กลับ</button>
+
+        </form>
+
+    </div>
+{% endblock %}

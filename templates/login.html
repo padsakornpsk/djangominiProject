@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+      <link rel="stylesheet" type="text/css" href="{% static 'stylesheets/bootstrap523/css/login.css' %}">
+
+     <div class="container mb-4   " style=" max-width: 60%;background-color: #edf0f2 ;">
+        <div class="shadow-sm p-3 mb-1 mt-4 bg-white rounded al " style="  height: 60% ;">
+            <h3 class="text-center">Login</h3>
+            <form method="post" class="login-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <button class="btn btn-success mb-3" type="submit">Log in</button>
+{#             <center>   <a class=" " style="text-align: center ;"  href="{% url 'register' %}">Register</a></center>#}
+
+  </form>
+        </div>
+    </div>
+
+
+{% endblock %}

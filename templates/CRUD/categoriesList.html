@@ -1,0 +1,44 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block content %}
+    <div class="shadow-sm p-3 mb-1 mt-4 bg-white rounded">
+        <div class="container-fluid">
+            <div class="col-MD-6">
+                <h3>หมวดหมู่ </h3>
+
+            </div>
+            <div class="col-MD-6 text-end">
+                <a href='{% url 'addCategory' %}' class="btn btn-success">
+                    <i class="fas fa-plus-square"></i>
+                    เพิ่ม
+                </a>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col" width="10%">รหัสหมวดหมู่</th>
+                <th scope="col" width="10%">หมวดหมู่</th>
+                <th scope="col" width="60%">คำอธิบาย</th>
+                <th scope="col" width="20%">ตัวเลือก</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cat in categories %}
+                    <form method="POST" >
+                    {% csrf_token %}
+                    <tr>
+                        <td>{{ cat.cat_id }}</td>
+                        <td>{{ cat.cat_name }}</td>
+                        <td>{{ cat.cat_desc }}</td>
+                        <td>
+                            <a href='{% url 'updateCategory' cat.cat_id %}' class="btn btn-info"><i class="fas fa-edit"></i>แก้ไข</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <a href='{% url 'deleteCategory' cat.cat_id %}' class="btn btn-danger"><i class="fas fa-trash"></i>ลบ</a>
+                        </td>
+                    </tr>
+                    </form>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

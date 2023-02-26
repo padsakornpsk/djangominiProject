@@ -1,0 +1,40 @@
+{% load static %}
+<ul class="nav navbar-expand-lg bg-white  border border-light justify-content-center  text-center " style="">
+        <li class="nav-item ">
+           <a class="nav-link " href="{% url 'showrestaurants' %}">
+                <ul class=" nav flex-column">
+                    <li class="nav-item ">
+                        <img src="{% static 'images/menu1.png' %}" style="height: 50px ; width: 50px" alt="">
+                    </li>
+                    <li class="nav-item text-dark">
+                        <h4> ร้านอาหาร</h4>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'showhotel' %}">
+                <ul class=" nav flex-column">
+                    <li class="nav-item">
+                        <img src="{% static 'images/hotel.png' %}" style="height: 50px ; width: 50px" alt="">
+                    </li>
+                    <li class="nav-item text-dark">
+                        <h4> โรงแรม</h4>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link " href="{% url 'showrecipe' %}">
+                <ul class=" nav flex-column">
+                    <li class="nav-item">
+                        <img src="{% static 'images/cooking.png' %}" style="height: 50px ; width: 50px" alt="">
+                    </li>
+                    <li class="nav-item text-dark">
+                        <h4> สูตรอาหาร</h4>
+                    </li>
+                </ul>
+            </a>
+        </li>
+
+    </ul>
